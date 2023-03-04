@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "fastify": "^4",
+    "close-with-grace": "^1",
+    "fastify-close-idle-server": "*",
+    "@fastify/http-proxy": "^8",
+    "@fastify/reply-from": "^8.4.3"
+  }
+}

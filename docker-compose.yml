@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  app:
+    image: nap-stack
+    ports:
+      - 8000:8080
+    environment:
+      EXIT_WHEN_IDLE: 0
+    volumes:
+      - php-app:/workspace/php-app
+
+volumes:
+  php-app:

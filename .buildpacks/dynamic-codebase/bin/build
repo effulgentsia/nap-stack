@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+for dir in $BP_DYNAMIC_CODEBASE_DIRS; do
+  chmod g+w $dir
+done

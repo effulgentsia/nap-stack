@@ -1,0 +1,9 @@
+processes:
+  node:
+    command: bash
+    args:
+    - .launch/start-node.sh
+  php:
+    command: bash
+    args:
+    - .launch/start-php.sh

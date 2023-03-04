@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+for pm in $BP_DYNAMIC_CODEBASE_PACKAGE_MANAGERS; do
+cat <<EOF >> "$CNB_BUILD_PLAN_PATH"
+[[requires]]
+name = "$pm"
+metadata = {launch = true}
+EOF
+done

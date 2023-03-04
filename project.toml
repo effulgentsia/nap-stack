@@ -1,0 +1,25 @@
+[_]
+schema-version = "0.2"
+
+[io.buildpacks]
+builder = "paketobuildpacks/builder-jammy-full"
+
+group = [
+  {uri = "gcr.io/paketo-buildpacks/node-engine"},
+  {uri = "gcr.io/paketo-buildpacks/npm-install"},
+  {uri = "gcr.io/paketo-buildpacks/node-start"},
+  {uri = "gcr.io/paketo-buildpacks/php"},
+  {uri = "gcr.io/paketo-buildpacks/yarn"},
+  {uri = "./.buildpacks/dynamic-codebase"},
+]
+
+build.env = [
+  {name = "BP_NODE_PROJECT_PATH", value = "node-app"},
+  {name = "BPE_DEFAULT_PORT", value = "8080"},
+
+  {name = "BP_PHP_SERVER", value = "httpd"},
+  {name = "BP_PHP_WEB_DIR", value = "php-app/web"},
+
+  {name = "BP_DYNAMIC_CODEBASE_PACKAGE_MANAGERS", value = "composer yarn"},
+  {name = "BP_DYNAMIC_CODEBASE_DIRS", value = "php-app php-app/web"},
+]
